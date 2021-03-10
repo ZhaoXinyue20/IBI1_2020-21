@@ -1,4 +1,4 @@
-# set  initial value
+# set some basic values
 n1 = 84
 count = 0
 nterms = 5
