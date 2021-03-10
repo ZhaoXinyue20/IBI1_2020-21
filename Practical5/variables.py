@@ -2,10 +2,12 @@
 a = 131201
 b = 190784
 c = 90321
-d = a - c
-e = a - b
+d = abs(a - c)
+e = abs(a - b)
 if d>e:
   print("d",d)
+elif d==e:
+  print("d = e")
 else:
   print("e",e)
 
