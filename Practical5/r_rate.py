@@ -7,7 +7,7 @@ print ("r is")
 r = input()
 # calculate
 while count < nterms:
-  nth = n1*r
+  nth = n1*(r+1)
   n1 = nth
   count += 1
 print('r rate is', r ,'total patients are', nth)
