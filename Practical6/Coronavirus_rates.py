@@ -11,4 +11,5 @@ colors = ['red', 'yellow', 'green', 'lightskyblue', 'yellowgreen', 'pink']
 pathes,text1,text2 = plt.pie(sizes, explode=explode, labels=labels,colors=colors, autopct='%1.1f%%', shadow=False, startangle=90, pctdistance = 0.6)
 # x,y轴刻度设置一致保证饼图为圆形
 plt.axis('equal')
+plt.title('Covid-19 patients in the world')
 plt.show()
