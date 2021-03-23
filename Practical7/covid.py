@@ -22,6 +22,7 @@ for i in range (0,7996):
 
 covid_data.loc[my_loc,"total_cases"]
 
+# worldwide cases
 L= []
 for i in range (0,7996):
      if covid_data.iloc[i,1]=="World":
@@ -49,7 +50,6 @@ plt.boxplot(score,
 plt.xlabel('world_dates')
 plt.ylabel('world_new_cases')
 plt.show()
-
 # plot world new deaths
 score = world_new_deaths
 plt.boxplot(score,
