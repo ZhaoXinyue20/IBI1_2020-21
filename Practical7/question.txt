@@ -1,0 +1,4 @@
+Questions: How the trend of Chinese covid patients number correlates with cases numbers of the whole world 
+Line number:69
+Result: The plot shows that in Januanry, the world cases are almost equal to the Chinese cases; from 1.24 to 2.5, the Chinese cases and the world cases are sharply increased; after 2.5, the number of Chinese cases goes down and the number of world cases continues to rise rapidly; after 2.28, both trends tend to be constant.
+This means that though Chinese cases are in high proportion of the world cases in the first two months, China controled the pandemic and the cases went down. At the meantime, the cases in other countries rised rapidly and did not decreases when the Chinese cases decreased.
