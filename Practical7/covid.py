@@ -74,10 +74,10 @@ for i in range (0,7996):
 	else:
 		Loc.append(False)
 
-China_new_cases=covid_data.loc[Loc,"new_cases"]
+World_total_cases=covid_data.loc[L,"total_cases"]
 China_total_cases=covid_data.loc[Loc,"total_cases"]
 China_dates=covid_data.loc[Loc,"date"]
-plt.plot(China_dates, China_new_cases, 'b+')
+plt.plot(China_dates, World_total_cases, 'b+')
 plt.plot(China_dates, China_total_cases, 'r+')
 plt.xticks(China_dates.iloc[0:len(China_dates):4],rotation=-90)
 plt.xlabel('dates')
