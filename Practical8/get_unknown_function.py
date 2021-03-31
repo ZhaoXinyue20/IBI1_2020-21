@@ -1,15 +1,17 @@
 import os
 import re
 import codecs
+# read fasta file as a list
 os.chdir("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical8")
 file=open("Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa","r")
 origin = file.readlines()
+# set some variable to temporarily put things
 output = []
 inof =''
-s=''
 Len=''
 data=""
 
+#find unknow function DNA and extract them
 for i in range(len(origin)):
     if origin[i].startswith('>') and re.search(r'unknown function', origin[i]):               
         name=re.search(r'(>.+?)_',origin[i])
@@ -26,15 +28,16 @@ for i in range(len(origin)):
         exp +=a .replace('\n','')
         output.append(exp)
 
+# then count the length of the gene
         Len = ''   
         output.append(Len)
 
 for i in range(len(output)): 
     if output[i].startswith('>'):
         Len=str(len(output[i+1])-1)
-        output[i+2]+= '\n' + Len + '\n'
+        output[i+2]+= '\n' + Len + '\n' # I put the length at the last line
         
-
+# save the new file
 fout = codecs.open('unknown_function.fa', "w") 
 for line in output:
     fout.write(line)
