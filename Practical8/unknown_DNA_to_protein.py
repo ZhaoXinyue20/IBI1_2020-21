@@ -2,7 +2,6 @@ import re
 import codecs
 import os
 
-
 # make translation function  
 def translation(gene):
     genetic_code = {"TTT":"F","TTC":"F","TTA":"L","TTG":"L",

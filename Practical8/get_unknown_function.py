@@ -7,7 +7,6 @@ file=open("Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa","r")
 origin = file.readlines()
 # set some variable to temporarily put things
 output = []
-inof =''
 Len=''
 data=""
 
