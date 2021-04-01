@@ -35,7 +35,7 @@ for i in range(len(origin)):
 for i in range(len(output)): 
     if output[i].startswith('>'):
         Len=str(len(output[i+1])-1)
-        output[i+2]+= '\n' + Len + '\n' # I put the length at the last line
+        output[i]+= '\n' + Len + '\n'
         
 # save the new file
 fout = codecs.open('unknown_function.fa', "w") 
