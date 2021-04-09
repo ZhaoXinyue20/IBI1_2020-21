@@ -1,0 +1,5 @@
+This reflection is written after I reveived my formative assessment feedback. 
+First, I missed some requirements in the guidance (I didn't write a reflection in formative assessment). I need to check the requirement files carefully, and check them with classmates to ensure.
+Second, I used Chinese in the pseudocode, which is not good.
+Third, I misunderstood some code function. e.g.the len()of a list is there are how many strings, but not the plus of all the strings.
+All in all, I need to practice more and read the guidance more carefully.
