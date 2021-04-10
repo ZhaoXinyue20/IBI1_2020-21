@@ -8,7 +8,7 @@ exon_counts=np.array(exon_counts)
 average_length=gene_lengths/exon_counts
 # change array to list
 average_lengths=list(average_length)
-# sort lengths
+# sort lengths. another method: average.sort(), print average
 average=sorted(average_lengths)
 print ("the average lengths are:" + str(average))
 # make a boxplot
