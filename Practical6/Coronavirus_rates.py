@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 # make freqeucy directionary
 My_dict={}
 Countries = {'USA':29862124, 'India':11285561, 'Brazil':11205972, 'Russia':4360823, 'UK':4234924}
+print (Countries)
 # making pie chart
 labels = 'USA', 'India', 'Brazil', 'Russia', 'UK'
 sizes = [29862124, 11285561, 11205972, 4360823, 4234924]
