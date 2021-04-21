@@ -8,5 +8,5 @@ The score of human_mouse sequence comparison is large, and the score of human/mo
 This indicates that human and mouse sequence are highly relative, while they have rare relationship with random sequence, which is reasonable.
 Thus, huamn and mouse are highly homologous. They may descend from a branch of common ancestor.
 
-The percentage of identical amino acids is high in human_mouse comparison, while it is low in human/mouse_random, which is reasonable.
+The percentage of identical amino acids is high in human_mouse comparison, while it is low in human/mouse_random comparison, which is reasonable.
 This means that mouse sequence and human sequence are 89.64% similar.
