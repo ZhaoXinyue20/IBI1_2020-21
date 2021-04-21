@@ -12,7 +12,7 @@ random = SeqIO.read("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11
 human_mouse = pairwise2.align.globalds(human.seq, mouse.seq, blosum62, -10, -0.5)
 human_random = pairwise2.align.globalds(human.seq, random.seq, blosum62, -10, -0.5)
 mouse_random = pairwise2.align.globalds(random.seq, mouse.seq, blosum62, -10, -0.5)
-# show the alignment score
+# /show the alignment score and the sequence/
 print(human_mouse)
 print(human_random)
 print(mouse_random)
