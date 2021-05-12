@@ -1,4 +1,4 @@
-# open and read fasta files
+# Open and read fasta files
 f1 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/SOD2_human.fa")
 f2 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/SOD2_mouse.fa")
 f3 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/RandomSeq.fa")
