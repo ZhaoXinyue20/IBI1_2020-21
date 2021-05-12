@@ -2,26 +2,26 @@
 f1 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/SOD2_human.fa")
 f2 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/SOD2_mouse.fa")
 f3 = open("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical11/RandomSeq.fa")
-line1 = f1.readlines()
-line2 = f2.readlines()
-line3 = f3.readlines()
+l1 = f1.readlines()
+l2 = f2.readlines()
+l3 = f3.readlines()
 
 # save the sequence in lists
 SOD2_human=''
 SOD2_mouse=''
 RandomSeq=''
 
-for i in range (len(line1)):
-	if not line1[i].startswith('>'):
-		SOD2_human += line1[i].replace('\n','').strip()
+for i in range (len(l1)):
+	if not l1[i].startswith('>'):
+		SOD2_human += l1[i].replace('\n','').strip()
 
-for i in range (len(line2)):
-	if not line2[i].startswith('>'):
-		SOD2_mouse += line2[i].replace('\n','').strip()
+for i in range (len(l2)):
+	if not l2[i].startswith('>'):
+		SOD2_mouse += l2[i].replace('\n','').strip()
 
-for i in range (len(line3)):
-	if not line3[i].startswith('>'):
-		RandomSeq += line3[i].replace('\n','').strip()
+for i in range (len(l3)):
+	if not l3[i].startswith('>'):
+		RandomSeq += l3[i].replace('\n','').strip()
 
 # create the blosum62
 amino = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', 'B', 'Z', 'X', '*']
