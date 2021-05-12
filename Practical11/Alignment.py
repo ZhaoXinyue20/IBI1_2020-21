@@ -13,15 +13,15 @@ RandomSeq=''
 
 for i in range (len(l1)):
 	if not l1[i].startswith('>'):
-		SOD2_human += l1[i].replace('\n','').strip()
+		SOD2_human += l1[i].replace('\n','')
 
 for i in range (len(l2)):
 	if not l2[i].startswith('>'):
-		SOD2_mouse += l2[i].replace('\n','').strip()
+		SOD2_mouse += l2[i].replace('\n','')
 
 for i in range (len(l3)):
 	if not l3[i].startswith('>'):
-		RandomSeq += l3[i].replace('\n','').strip()
+		RandomSeq += l3[i].replace('\n','')
 
 # create the blosum62
 amino = ['A', 'R', 'N', 'D', 'C', 'Q', 'E', 'G', 'H', 'I', 'L', 'K', 'M', 'F', 'P', 'S', 'T', 'W', 'Y', 'V', 'B', 'Z', 'X', '*']
