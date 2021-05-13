@@ -1,7 +1,14 @@
- I like IBI1 I hope!
 I like autumn.
-I like forest.
-I like leaves.
-I like patience.
-I don't like summer.
-I like number13.
+I like travling.
+<<<<<<< HEAD
+I like moon and stars.
+=======
+>>>>>>> Alex
+I like rabbits.
+I like wathcing TV.
+I don't like swimming.
+I like movies.
+I like blue.
+I like green.
+I like winter.
+I like snow
