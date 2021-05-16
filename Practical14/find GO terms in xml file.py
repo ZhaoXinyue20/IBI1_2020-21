@@ -10,12 +10,13 @@ DOM = xml.dom.minidom.parse("go_obo.xml")
 collection = DOM.documentElement
 terms = collection.getElementsByTagName("term")
 
-# create a dictionary
+# create a dictionary to store the GO terms
 def dict(terms):
     dict = {}
     for term in terms:
         is_a = [child.childNodes[0].data for child in term.getElementsByTagName("is_a")]
         all_id = term.getElementsByTagName("id")[0].childNodes[0].data
+        # children id goes to its father id. if there is no father id exists, add all id.
         for fa_id in is_a:
             if fa_id in dict:
                 dict[fa_id].append(all_id)
@@ -27,6 +28,7 @@ def dict(terms):
 def gene(terms,molecule):
     gene = []
     for term in terms:
+        # search the identified information
         defstrs = term.getElementsByTagName("defstr")[0]
         defstr = defstrs.childNodes[0].data
         id_related = term.getElementsByTagName("id")[0].childNodes[0].data
@@ -46,9 +48,9 @@ def getall(dict,lists):
             all += getall(dict,child)
     return all
 
-def count_childnodes(terms,molecular):
+def count_childnodes(terms,molecule):
     dicts = dict(terms)
-    match = gene(terms,molecular)
+    match = gene(terms,molecule)
     all_childnodes = getall(dicts,match)
     num = len(set(all_childnodes))
     return num
