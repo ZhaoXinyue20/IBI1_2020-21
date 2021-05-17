@@ -29,8 +29,7 @@ def gene(terms,molecule):
     gene = []
     for term in terms:
         # search the identified information
-        defstrs = term.getElementsByTagName("defstr")[0]
-        defstr = defstrs.childNodes[0].data
+        defstr = term.getElementsByTagName("defstr")[0].childNodes[0].data
         id_related = term.getElementsByTagName("id")[0].childNodes[0].data
         if not molecule.isupper():
             defstr = defstr.lower()
