@@ -16,12 +16,11 @@ def dict(terms):
     for term in terms:
         is_a = [child.childNodes[0].data for child in term.getElementsByTagName("is_a")]
         all_id = term.getElementsByTagName("id")[0].childNodes[0].data
-        # children id goes to its father id. if there is no father id existing, add all id.
         for fa_id in is_a:
-            if not fa_id in dict:
-                dict[fa_id] = [all_id]
+            if not fa_id in dict:  
+                dict[fa_id] = [all_id]  # if father id doesn't exist as a key in dict, then all_id will be the key.
             else:
-                dict[fa_id].append(all_id)
+                dict[fa_id].append(all_id)  # if father id is a key in the dict, the all_id will be the value of this key.
     return dict
 
 # find id of a specific biomolecules
@@ -31,22 +30,23 @@ def gene(terms,molecule):
         # search the identified information
         defstr = term.getElementsByTagName("defstr")[0].childNodes[0].data
         id_related = term.getElementsByTagName("id")[0].childNodes[0].data
-        if not molecule.isupper():
+        if not molecule.isupper():  # change the letters to capitalized ones to match. If not matching, change back.
             defstr = defstr.lower()
-        if molecule in defstr:
+        if molecule in defstr:  # add the id if matching
             gene.append(id_related)
-    return set(gene)
+    return set(gene)  # delete the repeated things
 
-# save the childnodes into the all list, and count the childnodes
+# use recursive method to save all the chilnodes
 def getall(dict,lists):
     all = []
     for f in lists:
         if f in dict:
             child = dict[f]
             all += child
-            all += getall(dict,child)
+            all += getall(dict,child) 
     return all
 
+# count the childnodes
 def count_childnodes(terms,molecule):
     dicts = dict(terms)
     match = gene(terms,molecule)
