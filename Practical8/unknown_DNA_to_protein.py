@@ -7,7 +7,9 @@ file=open("unknown_function.fa","r")
 origin = file.readlines()
 protein=[]
 seq=[]
+
 #translation
+# give the codon table
 genetic_code = {'TTT':'F', 'TTC':'F', 'TTA':'L', 'TTG':'L',
 'TCT':'S', 'TCC':'S', 'TCA':'S', 'TCG':'S',
 'TAT':'Y', 'TAC':'Y', 'TAA':'O', 'TAG':'U',
@@ -27,11 +29,11 @@ genetic_code = {'TTT':'F', 'TTC':'F', 'TTA':'L', 'TTG':'L',
 
 for i in range (len(origin)):
 	if origin[i].startswith('>'):
-		seq.append(origin[i].split(' ')[0])
+		seq.append(origin[i].split(' ')[0]) # get the sequence
 	else:
-		DNA = origin[i].replace('\n', '')
+		DNA = origin[i].replace('\n', '') 
 		pro = ''
-		for j in range (0, len(DNA), 3): 
+		for j in range (0, len(DNA), 3):  # read the codons
 			codon = DNA[j:j+3]
 			pro += genetic_code[codon]
 		protein.append(pro)
