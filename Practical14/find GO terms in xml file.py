@@ -16,7 +16,7 @@ def dict(terms):
     for term in terms:
         is_a = [child.childNodes[0].data for child in term.getElementsByTagName("is_a")]
         all_id = term.getElementsByTagName("id")[0].childNodes[0].data
-        # children id goes to its father id. if there is no father id exists, add all id.
+        # children id goes to its father id. if there is no father id existing, add all id.
         for fa_id in is_a:
             if fa_id in dict:
                 dict[fa_id].append(all_id)
