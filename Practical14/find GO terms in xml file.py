@@ -18,10 +18,10 @@ def dict(terms):
         all_id = term.getElementsByTagName("id")[0].childNodes[0].data
         # children id goes to its father id. if there is no father id existing, add all id.
         for fa_id in is_a:
-            if fa_id in dict:
-                dict[fa_id].append(all_id)
-            else:
+            if not fa_id in dict:
                 dict[fa_id] = [all_id]
+            else:
+                dict[fa_id].append(all_id)
     return dict
 
 # find id of a specific biomolecules
