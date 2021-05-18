@@ -4,32 +4,29 @@ import codecs
 # read fasta file as a list
 os.chdir("/Users/zhaoxinyue/Documents/GitHub/IBI1_2020-21/Practical8")
 file=open("Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa","r")
-origin = file.readlines()
-output = []
+lines = file.readlines()
 
-#find unknow function DNA and extract them
-for i in range(len(origin)):
-    if origin[i].startswith('>') and re.search(r'unknown function', origin[i]):               
-        name=re.search(r'(>.+?)(?:_| )',origin[i])  # get the name using regular expresion
-        Name=name.group()
-        output.append(Name)            
-        a = ''
-        for j in range(len(origin[i:-1])):
-            if origin[i+j+1].startswith('>'): # add the line(sequence) until next name appear
-              break
+output = []
+for i in range(len(lines)):
+    if lines[i].startswith(">") and "unknown function" in lines[i]:
+        # get the name using regular expresion
+        output.append(re.findall(r'(>.+?)(?:_)', lines[i])[0])
+        a = ""
+        # add the line(sequence) until next name appear
+        for j in range(len(lines[i:-1])):
+            if lines[i+j+1].startswith(">"):
+                break
             else:
-              a += origin[i+j+1][:-1]
+                a += lines[i+j+1][:-1]
         a += "\n"
         output.append(a)
-        
-# get the length of the gene
-        length = ''
-        output.append(length)
+
+# add lengths of the sequence
 for i in range(len(output)):
-    if output[i].startswith('>'):
-        length=str(len(output[i+1])-1)
+    if output[i].startswith(">"):
         output[i] += "  "
-        output[i] += length + "\n"
+        output[i] += str(len(output[i+1])-1)
+        output[i] += "\n"
 
 # save the new file
 fout = codecs.open('unknown_function.fa', "w") 
